@@ -34,6 +34,6 @@
         <TextBlock Text="р." Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="127,0,0,0"/>
 
         <Button Content="Добавить" Height="30" Grid.Row="4" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="50,0,0,0"/>
-        <Button Content="Отмена" Height="30" Grid.Row="4" Grid.Column="1" Width="100" HorizontalAlignment="Center" Margin="120,0,0,0"/>
+        <Button x:Name="addPaymentWindowBtnCancel" Content="Отмена" Height="30" Grid.Row="4" Grid.Column="1" Width="100" HorizontalAlignment="Center" Margin="120,0,0,0" Click="addPaymentWindowBtnCancel_Click"/>
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Praktika_31_10"
         xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Activated="Window_Activated" Deactivated="Window_Deactivated">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -18,8 +18,8 @@
             <ColumnDefinition Width="180"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="+" Height="30" Width="30" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,0,0,0" Click="Button_Click"/>
-        <Button Content="-" Height="30" Width="30" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <Button x:Name="mainWindowBtnPlus" Content="+" Height="30" Width="30" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,0,0,0" Click="Button_Click"/>
+        <Button x:Name="mainWindowBtnMinus" Content="-" Height="30" Width="30" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,6,0" Click="mainWindowBtnMinus_Click"/>
         <Border Height="40" Width="1" Background="Black" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0"/>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
             <TextBlock Text="c" VerticalAlignment="Center" Margin="5,0,0,0"/>
@@ -30,7 +30,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center">
             <TextBlock Text="Категория" VerticalAlignment="Center" Margin="0,0,10,0"/>
-            <ComboBox Height="30" Width="90" Margin="4,0,0,0"/>
+            <ComboBox x:Name="categoryCombo" Height="30" Width="90" Margin="4,0,0,0" DisplayMemberPath="category_name"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center">

@@ -18,9 +18,9 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Имя пользователя" Grid.Row="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="0"/>
         <TextBlock Text="Пароль" Grid.Row="1" FontSize="16" VerticalAlignment="Center" Grid.Column="0" HorizontalAlignment="Right"/>
-        <ComboBox Height="35" Width="130" Grid.Column="1" Grid.Row="0"/>
-        <TextBox Height="35" Width="130" Grid.Column="1" Grid.Row="1"/>
-        <Button Height="30" Width="90" Grid.ColumnSpan="2" Grid.Row="2" Content="Войти" Margin="0,0,10,0"/>
+        <TextBox x:Name="loginTextBox" Height="35" Width="130" Grid.Column="1" Grid.Row="0"/>
+        <TextBox x:Name="passwordTextBox" Height="35" Width="130" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="logInBtn" Height="30" Width="90" Grid.ColumnSpan="2" Grid.Row="2" Content="Войти" Margin="0,0,10,0" Click="Button_Click_1"/>
         <Button Height="30" Width="90" Grid.Row="2" Grid.Column="1" Content="Выход" Margin="42,0,0,0" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -23,5 +23,10 @@ namespace Praktika_31_10
         {
             InitializeComponent();
         }
+
+        private void addPaymentWindowBtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

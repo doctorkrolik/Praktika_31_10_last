@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Praktika_31_10
 {
@@ -24,10 +13,39 @@ namespace Praktika_31_10
         {
             InitializeComponent();
             dataGrid.ItemsSource = PaymentDBEntities.GetContext().payments.ToList();
+            categoryCombo.ItemsSource = PaymentDBEntities.GetContext().categories.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AddPaymentWindow addPaymentWindow = new AddPaymentWindow();
+            addPaymentWindow.Show();
+            this.IsEnabled = false;
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            IsEnabled = true;
+        }
+
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            this.IsEnabled = false;
+        }
+
+        private void mainWindowBtnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            var currentItem = dataGrid.SelectedItem;
+
+            if(MessageBox.Show("Вы действительно хотите удалить запись?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                PaymentDBEntities.GetContext().payments.Remove(currentItem as payments);
+                PaymentDBEntities.GetContext().SaveChanges();
+
+                dataGrid.ItemsSource = PaymentDBEntities.GetContext().payments.ToList();
+            }
+
+           
 
         }
     }
