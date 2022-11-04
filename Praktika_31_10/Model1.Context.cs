@@ -15,6 +15,10 @@ namespace Praktika_31_10
     
     public partial class PaymentDBEntities : DbContext
     {
+        public PaymentDBEntities()
+            : base("name=PaymentDBEntities")
+        {
+        }
 
         private static PaymentDBEntities _context;
 
@@ -22,15 +26,9 @@ namespace Praktika_31_10
         {
             if (_context == null)
                 _context = new PaymentDBEntities();
+
             return _context;
         }
-
-        public PaymentDBEntities()
-            : base("name=PaymentDBEntities")
-        {
-        }
-
-        
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -40,6 +38,7 @@ namespace Praktika_31_10
         public virtual DbSet<categories> categories { get; set; }
         public virtual DbSet<payments> payments { get; set; }
         public virtual DbSet<products> products { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<users> users { get; set; }
     }
 }
